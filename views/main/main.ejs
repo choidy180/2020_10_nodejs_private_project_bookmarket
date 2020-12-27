@@ -1,0 +1,97 @@
+<div class="nav_area2">
+    <div class="nav_box2">
+      <p class="nav_area2_head_text">회원님을 기다리는</p>
+      <p class="nav_area2_head_text">사연이 있어요</p>
+      <p class="nav_area2_sub_text">사연에 맞는 책을 추천해 주세요</p>
+      <div class="nav_box2_img_box">
+        <img class="nav_box2_img" src="../public/images/nav_box2/5f7143f20dc29.png" alt="" />
+      </div>
+    </div>
+  </div>
+<div class="main_area">
+  <div class="main_box1">
+    <div class="main_box1_head">오늘의 책</div>
+    <div class="main_box1_content_box">
+      <div class="main_box1_content_box_left">
+        <div class="main_box1_content_box_left_top">
+          <div class="main_nav_book_box">
+            <a href="/book/<%=row[0].BOOK_NUMBER%>">
+            <img
+              class="main_nav_book_img"
+              src="/public/images/book/<%=row[0].BOOK_IMG%>"
+              alt=""
+            />
+            </a>
+          </div>
+          <div class="main_nav_textbox">
+            <p class="main_nav_textbox_title">
+              <%= row[0].BOOK_NAME %>
+            </p>
+            <p class="main_nav_textbox_sub"><%= row[0].BOOK_AUTHOR %> / <%= row[0].BOOK_PUBLICATION%></p>
+          </div>
+        </div>
+        <div class="main_box1_content_box_left_bottom">
+          <div class="main_nav_book_box">
+            <a href="/book/<%=row[1].BOOK_NUMBER%>">
+            <img
+              class="main_nav_book_img"
+              src="/public/images/book/<%=row[1].BOOK_IMG%>"
+              alt=""
+            />
+            </a>
+          </div>
+          <div class="main_nav_textbox">
+            <p class="main_nav_textbox_title">
+                <%=row[1].BOOK_NAME%>
+            </p>
+            <p class="main_nav_textbox_sub">
+                <%=row[1].BOOK_AUTHOR%> / <%=row[1].BOOK_PUBLICATION%>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="main_box1_content_box_right">
+        <div class="main_box1_content_box_right_top">
+          <div class="main_box1_content_box_right_top_title">
+            지금 서점 베스트셀러
+          </div>
+        </div>
+        <div class="main_box1_content_box_right_bottom">
+          <div class="main_box1_content_box_right_left">
+            <div class="main_best_book_box">
+              <img
+                class="main_best_book_box_img"
+                src="/public/images/book/book3.jpg"
+                alt=""
+              />
+            </div>
+            <p class="main_best_title">만남은 지겹고 이별은 지쳤다</p>
+            <p class="main_best_sub">색과 체 산문집</p>
+          </div>
+          <div class="main_box1_content_box_right_left">
+            <div class="main_best_book_box">
+              <img
+                class="main_best_book_box_img"
+                src="/public/images/book/book4.jpg"
+                alt=""
+              />
+            </div>
+            <p class="main_best_title">나는 너를 펭랑해</p>
+            <p class="main_best_sub">펭수 엽서책</p>
+          </div>
+          <div class="main_box1_content_box_right_left">
+            <div class="main_best_book_box">
+              <img
+                class="main_best_book_box_img"
+                src="/public/images/book/book5.jpg"
+                alt=""
+              />
+            </div>
+            <p class="main_best_title">원피스 ONE PIECE 97</p>
+            <p class="main_best_sub">나의 바이블</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+<div class="search_result_area">
+    <div class="book_detail_box">
+        <div class="book_detail_box_left">
+            <div class="book_detail_box_top">
+                <div class="book_detail_box_top_book_imgbox">
+                    <img class="book_detail_box_top_book_img" src="/public/images/book/<%= row[0].BOOK_IMG%>" alt="">
+                </div>
+                <div class="book_detail_box_top_book_text_box">
+                    <div class="book_detail_title">
+                        <span><%= row[0].BOOK_NAME%></span>
+                    </div>
+                    <div class="book_detail_host">
+                        <%= row[0].BOOK_AUTHOR%> &nbsp;&nbsp; |&nbsp;&nbsp; <%= row[0].BOOK_PUBLICATION%> &nbsp;&nbsp; | &nbsp;&nbsp; <%= row[0].BOOK_DATE%>
+                    </div>
+                    <div class="book_detail_price">
+                        <div class="book_detail_price_textbox">
+                            <div class="book_detail_price_title">
+                                정가
+                            </div>
+                            <div class="book_detail_price_content">
+                                <%= row[0].BOOK_PRICE%>원
+                            </div>
+                        </div>
+                        <div class="book_detail_price_textbox">
+                            <div class="book_detail_price_title">
+                                할인율
+                            </div>
+                            <div class="book_detail_price_content">
+                                <%= row[0].BOOK_DISCOUNT_RATE%>%
+                            </div>
+                        </div>
+                        <div class="book_detail_price_textbox" style="border: 0px;">
+                            <div class="book_detail_price_title">
+                                판매가
+                            </div>
+                            <div class="book_detail_price_content">
+                                <%=row[0].BOOK_PRICE - row[0].BOOK_PRICE/100 * row[0].BOOK_DISCOUNT_RATE%>원
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book_detail_box_under">
+                <%= row[0].BOOK_DETAIL%>
+            </div>
+            <form method="POST" action="/board/shopping_cart">
+            <input type="text" name="book_number" id="" value="<%=row[0].BOOK_NUMBER%>" readonly style="border: 0px; outline: none; color: transparent;">
+        </div>
+        <div class="book_detail_box_right">
+            <div class="on_sale">
+                <% if (row[0].BOOK_STOKE == 0) {%>
+                    <div class="on_sale_title">재고량이 없습니다.</div>
+                <%} else {%>
+                    <% if (sess.user) {%>
+                    <div class="on_sale_title">판매중 (재고량 : <%=row[0].BOOK_STOKE%>개)</div>
+                <div class="on_sale_amout">
+                    <div class="on_sale_amout_left" onclick="minus();">
+                        ㅡ
+                    </div>
+                    <input type="text" class="on_sale_amout_center" value="1" readonly name="book_account">
+                    <div class="on_sale_amout_right" onclick="plus();">
+                        +
+                    </div>
+                </div>
+                <p class="book_total_pay_amount_box">기존 금액 :&nbsp;<span class="book_total_pay_amount_box_basic_value"><%=row[0].BOOK_PRICE%></span> 원</p>
+                <p class="book_total_pay_amount_box">할인 된 금액 :&nbsp;<span class="book_total_pay_amount_box_account_value"><%=(row[0].BOOK_PRICE / 100) * row[0].BOOK_DISCOUNT_RATE%></span> 원</p>
+                <p class="book_total_pay_amount_box">총 결제금액 :&nbsp;<span class="book_total_pay_amount_box_value"><%=row[0].BOOK_PRICE - ((row[0].BOOK_PRICE / 100) * row[0].BOOK_DISCOUNT_RATE)%></span> 원</p>
+                <script>
+                    plus = () => {
+                        if (parseInt(document.querySelector('.on_sale_amout_center').value) < 101){
+                            document.querySelector('.on_sale_amout_center').value = parseInt(document.querySelector('.on_sale_amout_center').value) + 1;
+                            document.querySelector('.book_total_pay_amount_box_basic_value').innerText = `${"<%=row[0].BOOK_PRICE%>"}` * parseInt(document.querySelector('.on_sale_amout_center').value);
+                            document.querySelector('.book_total_pay_amount_box_account_value').innerText = `${"<%=row[0].BOOK_PRICE/100 * row[0].BOOK_DISCOUNT_RATE%>"}` * parseInt(document.querySelector('.on_sale_amout_center').value);
+                            document.querySelector('.book_total_pay_amount_box_value').innerText = `${"<%=row[0].BOOK_PRICE - row[0].BOOK_PRICE/100 * row[0].BOOK_DISCOUNT_RATE%>"}` * parseInt(document.querySelector('.on_sale_amout_center').value);
+                        }
+                    }
+                    minus = () => {
+                        if (parseInt(document.querySelector('.on_sale_amout_center').value) > 1){
+                            document.querySelector('.on_sale_amout_center').value = parseInt(document.querySelector('.on_sale_amout_center').value) - 1;
+                            document.querySelector('.book_total_pay_amount_box_basic_value').innerText = `${"<%=row[0].BOOK_PRICE%>"}` * parseInt(document.querySelector('.on_sale_amout_center').value);
+                            document.querySelector('.book_total_pay_amount_box_account_value').innerText = `${"<%=row[0].BOOK_PRICE/100 * row[0].BOOK_DISCOUNT_RATE%>"}` * parseInt(document.querySelector('.on_sale_amout_center').value);
+                            document.querySelector('.book_total_pay_amount_box_value').innerText = `${"<%=row[0].BOOK_PRICE - row[0].BOOK_PRICE/100 * row[0].BOOK_DISCOUNT_RATE%>"}` * parseInt(document.querySelector('.on_sale_amout_center').value);
+                        }
+                    }
+                </script>
+                <div class="on_sale_title" style="font-size: 16px;">배송비 : 무료</div>
+                <button class="on_sale_button1">카트에 넣기</button>
+            </form>
+                <button class="on_sale_button2" onclick="location.href='/order_page/<%=row[0].BOOK_NUMBER%>division'+document.querySelector('.on_sale_amout_center').value" >바로 구매</button>
+                <%}%>
+                <%}%>
+            </div>
+        </div>
+    </div>
+</div>
