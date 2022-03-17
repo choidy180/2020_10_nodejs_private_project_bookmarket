@@ -4,4 +4,4 @@
 
 Personal Tasks for the 2020 Database Design of Dongseo University
 
-NojeJs, Mysql
+skill -> NojeJs, Mysql
