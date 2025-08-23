@@ -3,7 +3,7 @@
   <img src="./public/private-book.jpg" alt="private-book Banner" width="200px" />
 </p>
 
-<h1 align="center">⚡ WEATHER OUTFIT</h1>
+<h1 align="center">🕮 PRIVATE BOOKMARKET</h1>
 <p align="center">
   <b>NodeJS 기반의 날씨기반 의상추천 웹서비스</b>
 </p>
