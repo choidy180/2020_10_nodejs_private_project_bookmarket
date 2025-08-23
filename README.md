@@ -5,7 +5,7 @@
 
 <h1 align="center">🕮 PRIVATE BOOKMARKET</h1>
 <p align="center">
-  <b>NodeJS 기반의 날씨기반 의상추천 웹서비스</b>
+  <b>NodeJS기반의 도서구매사이트</b>
 </p>
 
 <p align="center">
@@ -18,15 +18,15 @@
   <img src="https://img.shields.io/github/license/choidy180/poke-next?color=brightgreen" />
   <img src="https://img.shields.io/badge/PRs-welcome-yellow?logo=github" />
   <img src="https://img.shields.io/badge/Made%20with-❤️-ff69b4" />
+  <img src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white&style=for-the-badge" />
 </p>
 
 ---
 
 ##  기능
-- ☀️ **전세계 각 도시별 날씨데이터 가져오기**
-- 🌈 **상세 정보 제공** 시간별 날씨정보, 강우 확률 등 정보제공
-- 👗 **날씨별 의상추천** 날씨데이터 기반으로 사용자에게 의상추천, (이미지 조합으로 캐릭터로 제공)
-- 🛍️ **무신사 API 연동** 무신사 API 연동하여, 사용자에게 추천의상 구매 UI 노출시키고, 구매페이지로 이동
+- 📖 **책을 등록하고, 기본적인 쇼핑몰 기능 제공**
+- 🌈 **도서 정보 제공** 도서의 기본적인 정보 및 이미지 제공공
+- 🛍️ **구매기록 기반 혜택** 구매기록으로 포인트 및 등급제공하여, 회원별로 다른 할인율 적용
 
 ---
 
