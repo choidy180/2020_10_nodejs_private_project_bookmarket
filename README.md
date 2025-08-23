@@ -1,6 +1,6 @@
 <!-- BANNER -->
 <p align="center">
-  <img src="./public/weather-outfit.jpg" alt="Poke-Next Banner" width="200px" />
+  <img src="./public/private-book.jpg" alt="private-book Banner" width="200px" />
 </p>
 
 <h1 align="center">⚡ WEATHER OUTFIT</h1>
