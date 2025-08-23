@@ -18,7 +18,6 @@
   <img src="https://img.shields.io/github/license/choidy180/poke-next?color=brightgreen" />
   <img src="https://img.shields.io/badge/PRs-welcome-yellow?logo=github" />
   <img src="https://img.shields.io/badge/Made%20with-❤️-ff69b4" />
-  <img src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white&style=for-the-badge" />
 </p>
 
 ---
@@ -38,6 +37,7 @@
   <img src="https://img.shields.io/badge/Yarn-2C8EBB?logo=yarn&logoColor=white" /> 
   <img src="https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=white" /> 
   <img src="https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=000" />
+  <img src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white" />
 </p>
 
 ---
